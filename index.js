@@ -21,7 +21,7 @@ async function operation(acc) {
     }
 
     await Helper.delay(
-      10000,
+      50000,
       acc,
       `All Fragment Claimed and Account ${
         account.indexOf(acc) + 1
@@ -44,9 +44,10 @@ async function operation(acc) {
 async function process() {
   logger.clear();
   logger.info(`BOT STARTED`);
-  for (const acc of account) {
+  const promiseList = account.map(async (acc) => {
     await operation(acc);
-  }
+  });
+  await Promise.all(promiseList);
   logger.info(`BOT FINISHED`);
   twist.cleanInfo();
   await Helper.delay(
