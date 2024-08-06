@@ -25,7 +25,7 @@ RIVALZ Fragment Auto Claim bot claim your daily rivalz fragment
 im adding config file for you to configure, open `src config/config.js` and adjust config. Here some configurable variables.
 
 ```js
-fragmentToClaim = 20; //max error retry
+fragmentToClaim = 20; 
 ```
 
 ## HOW TO UPDATE
